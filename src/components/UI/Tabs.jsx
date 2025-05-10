@@ -22,11 +22,11 @@ export default function Tabs() {
           <button
             key={tab.id}
             onClick={() => setActiveTab(tab.id)}
-            className={` text-center border border-[#0E253C1A] rounded-tl-2xl rounded-tr-2xl px-4 py-2
+            className={` text-center border border-[#0E253C1A] text-sm rounded-tl-2xl rounded-tr-2xl px-4 py-2
               ${
                 activeTab === tab.id
                   ? "border-b-0 text-[#513CCE] font-medium bg-white"
-                  : "text-[#0E253CD9] hover:text-[#513CCE]"
+                  : "text-[#0E253CD9] hover:text-[#513CCE] "
               }`}
           >
             {tab.label}
