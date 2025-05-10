@@ -96,15 +96,15 @@ export default function RecentActivity() {
   return (
     <div className="bg-[#F6F8F9] border border-[#0E253C1A] rounded-2xl mt-4">
       <div className="flex justify-between items-center px-4 py-3">
-        <h2>Order Status</h2>
+        <h2>Recent Activities</h2>
         <div>
         </div>
       </div>
-      <div className="border-t border-[#0E253C1A]  p-4">
+      <div className="border-t border-[#0E253C1A] px-5">
         {activities.map((section, idx) => (
-          <div>
-            <p className="text-sm font-semibold text-gray-500 uppercase mb-2">{section.date}</p>
-            <ul className="space-y-3">
+          <div >
+            <p className="text-sm font-semibold text-gray-500 uppercase mb-2 mt-4">{section.date}</p>
+            <ul className="space-y-3 mb-4">
               {section.items.map((item, i) => (
                 <li key={i} className=" gap-2 items-start">
                   <div className="flex">

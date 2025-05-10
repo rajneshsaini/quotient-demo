@@ -2,6 +2,7 @@ import mailIcon from '../../assets/icons/mailIcon.svg'
 import phoneIcon from '../../assets/icons/phoneIcon.svg'
 import messageIcon from '../../assets/icons/messageIcon.svg'
 import calendarIcon from '../../assets/icons/calendarIcon.svg'
+import BusinessDetails from '../Dashboard/BusinessDetails'
 
 const social_links = [{
   id: 1,
@@ -52,6 +53,7 @@ export default function Sidebar() {
           </div>
         )}
       </div>
+      <BusinessDetails />
     </div>
   );
 }

@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import downArrow from '../../assets/icons/downArrow.svg'
 import allOrders from '../../assets/icons/allOrders.svg'
+import DonutChart from "./DonutChart";
 
 const categories = ['Technology', 'Health', 'Finance'];
 const orderDetails = [{
@@ -107,8 +108,8 @@ export default function OrderStatusChart() {
             })
           }
         </div>
-        <div className="w-5/12">Chart</div>
       </div>
+        <div className="w-full"><DonutChart /></div>
     </div>
   );
 }

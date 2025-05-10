@@ -1,5 +1,7 @@
 import Slider from 'react-slick';
 import totalOrdersIcon from '../../assets/icons/totalOrders.svg';
+import arrowNextIcon from '../../assets/icons/arrowNextIcon.svg';
+import arrowPrevIcon from '../../assets/icons/arrowPrevIcon.svg';
 
 const statData = [{
   id: 'stat1',
@@ -47,12 +49,10 @@ function CustomPrevArrow(props) {
   return (
     <div
       onClick={onClick}
-      className={`absolute left-0 top-1/2 -translate-y-1/2 z-10 cursor-pointer bg-white shadow-md rounded-full p-2 hover:bg-gray-100`}
-      style={{ transform: 'translate(-50%, -50%)' }} // fine-tuned left edge position
+      className={`absolute w-6 h-6 left-0 top-1/2 -translate-y-1/2 z-10 cursor-pointer bg-white shadow-md rounded-full p-2 hover:bg-gray-100`}
+      style={{ transform: 'translate(-50%, -50%)' }} 
     >
-      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-black" viewBox="0 0 20 20" fill="currentColor">
-        <path fillRule="evenodd" d="M12.293 16.707a1 1 0 010-1.414L15.586 12H4a1 1 0 110-2h11.586l-3.293-3.293a1 1 0 011.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z" clipRule="evenodd" />
-      </svg>
+     <img src={arrowPrevIcon} />
     </div>
   );
 }
@@ -62,12 +62,10 @@ function CustomNextArrow(props) {
   return (
     <div
       onClick={onClick}
-      className={`absolute right-0 top-1/2 -translate-y-1/2 z-10 cursor-pointer bg-white shadow-md rounded-full p-2 hover:bg-gray-100`}
+      className={`absolute w-6 h-6 right-0 top-1/2 -translate-y-1/2 z-10 cursor-pointer bg-white shadow-md rounded-full p-2 hover:bg-gray-100`}
       style={{ transform: 'translate(50%, -50%)' }}
     >
-      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-black" viewBox="0 0 20 20" fill="currentColor">
-        <path fillRule="evenodd" d="M7.707 3.293a1 1 0 010 1.414L4.414 8H16a1 1 0 110 2H4.414l3.293 3.293a1 1 0 01-1.414 1.414l-5-5a1 1 0 010-1.414l5-5a1 1 0 011.414 0z" clipRule="evenodd" />
-      </svg>
+     <img src={arrowNextIcon}  />
     </div>
   );
 }
