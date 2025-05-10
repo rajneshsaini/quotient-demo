@@ -33,7 +33,8 @@ const social_links = [
 export default function Sidebar() {
   return (
     <div className="bg-gray-100 dark:bg-gray-900 p-4">
-      <div className="user-info flex justify-between bg-white border border-[#0E253C1A] p-4 rounded-2xl mb-4 dark:bg-[#001121]">
+      <div className=" flex lg:flex-col flex-row lg:gap-0 gap-4">
+      <div className="w-full user-info flex justify-between bg-white border border-[#0E253C1A] p-4 rounded-2xl mb-4 dark:bg-[#001121]">
         <div className="flex ">
           <div className="relative h-12 w-12 rounded-full bg-[#513CCE] flex items-center justify-center text-white mr-2">
             <span className="h-[10px] w-[10px] bg-[#22C55E] text-base rounded-full absolute right-0 top-1"></span>
@@ -52,7 +53,7 @@ export default function Sidebar() {
         <p className="text-xs text-[#513CCE]  text-right">Change Status</p>
       </div>
 
-      <div className="social_links  flex justify-between items-center bg-white dark:bg-[#001121] border border-[#0E253C1A] py-4 rounded-2xl mb-4   [&>div:not(:last-child)]:border-r [&>div:not(:last-child)]:border-[#0E253C1A] h-[76px]">
+      <div className="w-full social_links  flex justify-between items-center bg-white dark:bg-[#001121] border border-[#0E253C1A] py-4 rounded-2xl mb-4   [&>div:not(:last-child)]:border-r [&>div:not(:last-child)]:border-[#0E253C1A] h-[76px]">
         {social_links?.map((item) => (
           <div key={item?.id} className="text-center flex-1">
             <img
@@ -64,6 +65,7 @@ export default function Sidebar() {
             </p>
           </div>
         ))}
+      </div>
       </div>
       <BusinessDetails />
     </div>
