@@ -1,6 +1,7 @@
 import React from "react";
 import { Save, Plus, X } from "lucide-react";
 import Card from "../common/Card";
+import usFlag from '../../assets/images/flag.png'
 
 const BusinessDetails = () => {
   return (
@@ -54,7 +55,7 @@ const BusinessDetails = () => {
             <div key={index} className="flex mb-2 gap-1.5">
               <div className="flex-shrink-0">
                 <select className="h-full p-2 text-sm bg-white dark:bg-[#001121] border border-gray-300 dark:border-[#FFFFFF4D] rounded-xl text-gray-900 dark:text-white w-[100px]">
-                  <option>US</option>
+                  <option><img src={usFlag} />US</option>
                 </select>
               </div>
               <input
