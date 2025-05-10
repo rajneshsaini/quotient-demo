@@ -31,25 +31,25 @@ const social_links = [{
 export default function Sidebar() {
   return (
     <div className="bg-gray-100 dark:bg-gray-900 p-4">
-      <div className="user-info flex bg-white border border-[#0E253C1A] p-4 rounded-2xl mb-4">
-        <div className="flex w-full">
-          <div className="relative h-9 w-9 rounded-full bg-[#513CCE] flex items-center justify-center text-white mr-2">
-            <span className="h-[10px] w-[10px] bg-[#22C55E] rounded-full absolute right-0 top-0"></span>
-            MG
+      <div className="user-info flex justify-between bg-white border border-[#0E253C1A] p-4 rounded-2xl mb-4">
+        <div className="flex">
+          <div className="relative h-12 w-12 rounded-full bg-[#513CCE] flex items-center justify-center text-white mr-2">
+            <span className="h-[10px] w-[10px] bg-[#22C55E] text-base rounded-full absolute right-0 top-1"></span>
+            TG
           </div>
           <div>
-            <h3>Truck Grear <span>Business</span></h3>
+            <h3 className='text-base text-[#0E253C] font-semibold flex items-center gap-1'>Truck Grear <span className='text-[#E48D21] bg-[#E48D211A]  w-[66px] h-[19px] font-medium text-[10px] uppercase flex justify-center items-center rounded-[99px] mt-1'>Business</span></h3>
             <p>jillali@onechanneladmin.com</p>
           </div>
         </div>
-        <p>Change Status</p>
+        <p className='text-xs text-[#513CCE]  text-right'>Change Status</p>
       </div>
 
-      <div className="social_links  flex justify-between items-center bg-white border border-[#0E253C1A] p-4 rounded-2xl mb-4   [&>div:not(:last-child)]:border-r [&>div:not(:last-child)]:border-[#0E253C1A]">
+      <div className="social_links  flex justify-between items-center bg-white dark:bg-[#001121] border border-[#0E253C1A] py-4 rounded-2xl mb-4   [&>div:not(:last-child)]:border-r [&>div:not(:last-child)]:border-[#0E253C1A] h-[76px]">
         {social_links?.map((item) =>
           <div key={item?.id} className='text-center flex-1'>
-            <img src={item?.icon} className='mx-auto' />
-            <p className='text-center'>{item?.name}</p>
+            <img src={item?.icon} className='mx-auto dark:invert dark:brightness-0 dark:saturate-0' />
+            <p className='text-center dark:text-white text-xs text-[#0E253CD9] mt-1'>{item?.name}</p>
           </div>
         )}
       </div>
