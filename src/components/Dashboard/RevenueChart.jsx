@@ -1,15 +1,27 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import {
   BarChart,
   Bar,
   XAxis,
   YAxis,
   CartesianGrid,
-  ResponsiveContainer,
   Tooltip,
+  ResponsiveContainer,
+  LabelList,
 } from "recharts";
-import Card from "../common/Card";
 
+const data = [
+  { name: "Jan", value: 4000 },
+  { name: "Feb", value: 3000 },
+  { name: "Mar", value: 5000 },
+  { name: "Apr", value: 2000 },
+  { name: "May", value: 1000 },
+  { name: "Jun", value: 4000 },
+  { name: "Jun", value: 7000 },
+  { name: "Jun", value: 8000 },
+  { name: "Jun", value: 4000 },
+  { name: "Jun", value: 6000 },
+];
 const monthlyData = [
   { name: "Jan", value: 589.12 },
   { name: "Feb", value: 840.2 },
@@ -25,20 +37,8 @@ const monthlyData = [
   { name: "Dec", value: 840.2 },
 ];
 
-const CustomTooltip = ({ active, payload, label }) => {
-  if (active && payload && payload.length) {
-    return (
-      <div className="bg-white dark:bg-gray-800 p-2 border border-gray-200 dark:border-gray-700 shadow-md rounded-md">
-        <p className="text-sm font-medium">{label}</p>
-        <p className="text-sm">${payload[0].value.toFixed(2)}</p>
-      </div>
-    );
-  }
-  return null;
-};
-
 const RevenueChart = () => {
-  const { theme } = 'light';
+  const theme = "light"; // replace with real theme logic if needed
   const [activeTab, setActiveTab] = useState("revenue");
 
   const tabs = [
@@ -52,7 +52,7 @@ const RevenueChart = () => {
     .toFixed(2);
 
   return (
-    <Card className="p-6">
+    <div>
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
         <div className="flex flex-wrap gap-2">
           {tabs.map((tab) => (
@@ -86,59 +86,49 @@ const RevenueChart = () => {
             Total Revenue:
           </span>
           <span className="text-sm font-bold dark:text-white">
-            ${totalRevenue}
+            ${totalRevenue || 0}
           </span>
         </div>
       </div>
-
-      <div className="h-[400px] sm:h-80">
-        <ResponsiveContainer width="100%" height="100%">
-          <BarChart
-            data={monthlyData}
-            margin={{ top: 20, right: 20, left: 20, bottom: 20 }}
+      <ResponsiveContainer width="100%" height={350}>
+        <BarChart
+          data={data}
+          margin={{ top: 10, right: 30, left: 20, bottom: 0 }}
+        >
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis
+            dataKey="name"
+            tick={{
+              fill: theme === "dark" ? "#9ca3af" : "#6b7280",
+              fontSize: 12,
+            }}
+          />
+          <YAxis
+            axisLine={false}
+            tickLine={false}
+            tick={{
+              fill: theme === "dark" ? "#9ca3af" : "#6b7280",
+              fontSize: 12,
+            }}
+            tickFormatter={(value) => value.toFixed(2)}
+            dx={-10}
+          />
+          <Tooltip />
+          <Bar
+            dataKey="value"
+            fill={theme === "dark" ? "#7c3aed" : "#8b5cf6"}
+            radius={[4, 4, 0, 0]}
+            barSize={50}
           >
-            <CartesianGrid
-              strokeDasharray="3 3"
-              vertical={false}
-              stroke={theme === "dark" ? "#374151" : "#f3f4f6"}
-            />
-            <XAxis
-              dataKey="name"
-              axisLine={false}
-              tickLine={false}
-              tick={{
-                fill: theme === "dark" ? "#9ca3af" : "#6b7280",
-                fontSize: 12,
-              }}
-              dy={10}
-            />
-            <YAxis
-              axisLine={false}
-              tickLine={false}
-              tick={{
-                fill: theme === "dark" ? "#9ca3af" : "#6b7280",
-                fontSize: 12,
-              }}
-              tickFormatter={(value) => {value}}
-              dx={-10}
-            />
-            <Tooltip content={<CustomTooltip />} />
-            <Bar
+            <LabelList
               dataKey="value"
-              fill={theme === "dark" ? "#7c3aed" : "#8b5cf6"}
-              radius={[4, 4, 0, 0]}
-              barSize={90}
+              position="top"
+              formatter={(value) => value.toFixed(2)}
             />
-          </BarChart>
-        </ResponsiveContainer>
-      </div>
-
-      <div className="flex justify-center items-center mt-4">
-        <span className="text-xs font-medium text-gray-500 dark:text-gray-400">
-          • 2023
-        </span>
-      </div>
-    </Card>
+          </Bar>
+        </BarChart>
+      </ResponsiveContainer>
+    </div>
   );
 };
 
