@@ -56,9 +56,9 @@ export default function OrderStatusChart() {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
   return (
-    <div className="bg-[#F6F8F9] border border-[#0E253C1A] rounded-2xl mt-4">
+    <div className="bg-[#F6F8F9] dark:bg-[#010D19] border border-[#0E253C1A] dark:border-[#FFFFFF21] rounded-2xl mt-4">
       <div className="flex justify-between items-center px-4 py-3">
-        <h2>Order Status</h2>
+        <h2 className="text-lg font-semibold text-[#0E253C] dark:text-[#FFF]">Order Status</h2>
         <div>
           <div className="relative w-[146px] rounded-xl" ref={dropdownRef}>
             <button
@@ -88,7 +88,7 @@ export default function OrderStatusChart() {
 
         </div>
       </div>
-      <div className="flex border-t border-[#0E253C1A]">
+      <div className="flex border-t border-[#0E253C1A] dark:border-[#FFFFFF21]">
         <div className="w-7/12 flex flex-wrap">
           {
             orderDetails?.map((order, index) => {
@@ -96,12 +96,12 @@ export default function OrderStatusChart() {
               const isLastRow = index >= orderDetails.length - 2;
 
               return (
-                <div className={`w-1/2 flex h-[118px] items-start px-5 py-8 gap-2 border-[#0E253C1A] ${isLeftCol ? 'border-r' : ''}
+                <div className={`w-1/2 flex h-[118px] items-start px-5 py-8 gap-2 border-[#0E253C1A] dark:border-[#FFFFFF21] ${isLeftCol ? 'border-r' : ''}
               ${!isLastRow ? 'border-b' : ''}`}>
                   <img src={order.icon} width={21} />
                   <div>
-                    <p>{order.title}</p>
-                    <h3>{order.count}</h3>
+                    <p className="text-xs font-medium font-[#0E253CD9] dark:text-[#FFFFFFCC]">{order.title}</p>
+                    <h3 className="text-[22px] font-semibold text-[#0E253C] dark:text-[#FFFFFF]">{order.count}</h3>
                   </div>
                 </div>
               )

@@ -1,5 +1,6 @@
 import React from "react";
 import { PieChart, Pie, Cell, ResponsiveContainer, Label } from "recharts";
+import { useTheme } from "../../context/ThemeContext";
 
 const data = [
   { name: "Red", value: 50, color: "#FF5A5F" },
@@ -38,6 +39,7 @@ const renderLabel = ({
 };
 
 const DonutChart = () => {
+  const { theme, toggleTheme } = useTheme();
   return (
     <div className="w-full h-64 flex justify-center items-center">
       <ResponsiveContainer width={250} height={250}>
@@ -59,9 +61,10 @@ const DonutChart = () => {
             <Label
               value="250"
               position="center"
-              fill="#0F172A"
+              fill={theme === "light" ? "#0F172A" : "#FFFFFF"}
               fontSize={24}
               fontWeight="bold"
+              // className="dark:text-[#FFFFFF]"
             />
           </Pie>
         </PieChart>

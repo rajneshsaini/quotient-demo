@@ -94,37 +94,37 @@ const activities = [
 
 export default function RecentActivity() {
   return (
-    <div className="bg-[#F6F8F9] border border-[#0E253C1A] rounded-2xl mt-4">
+    <div className="bg-[#F6F8F9] border border-[#0E253C1A] rounded-2xl mt-4 dark:bg-[#010D19] dark:border-[#FFFFFF21]">
       <div className="flex justify-between items-center px-4 py-3">
-        <h2>Recent Activities</h2>
+       <h2 className="text-lg font-semibold text-[#0E253C] dark:text-white">Recent Activities</h2>
         <div>
         </div>
       </div>
-      <div className="border-t border-[#0E253C1A] px-5">
+      <div className="border-t border-[#0E253C1A] dark:border-[#FFFFFF21] px-5">
         {activities.map((section, idx) => (
           <div >
-            <p className="text-sm font-semibold text-gray-500 uppercase mb-2 mt-4">{section.date}</p>
+            <p className="text-sm font-semibold text-gray-500 uppercase mb-2 mt-4 dark:text-white">{section.date}</p>
             <ul className="space-y-3 mb-4">
               {section.items.map((item, i) => (
                 <li key={i} className=" gap-2 items-start">
                   <div className="flex">
                     <div className={`w-6 h-6 rounded-full mt-1 ${item.iconColor} flex justify-center items-center mr-3`}>
-                      <img src={messageIconWhite} />
+                      <img src={messageIconWhite} className="dark:invert dark:brightness-0 dark:saturate-0" />
                     </div>
-                    <div className="text-sm text-gray-700 flex">
-                      <div>{item.content}</div>
-                      <div className="text-xs text-gray-500 mt-0.5"><span className="w-1 h-1 inline-block mx-1 bg-[#0E253CD9] rounded-full"></span>{item.time}</div>
+                    <div className="text-sm  dark:text-[#FFFFFFCC] text-[#0E253CD9] flex">
+                      <div className=" dark:text-[#FFFFFFCC] text-[#0E253CD9]">{item.content}</div>
+                      <div className="text-xs text-gray-500 dark:text-[#FFFFFFCC] mt-0.5"><span className="w-1 h-1 inline-block mx-1 bg-[#0E253CD9] rounded-full"></span>{item.time}</div>
                     </div>
                   </div>
                   <div className="reply ml-8">
                     {item.replies?.map((reply, id) => (
                       <div className="flex items-center gap-0.5">
-                        <div className={`w-6 h-6 rounded-full mt-1 bg-[${reply.iconColor}] flex justify-center items-center`}>
-                          <img src={replyIcon} />
+                        <div className={`w-6 h-6 rounded-full mt-1 bg-[${reply.iconColor}] dark:bg-[#0E253C1A] flex justify-center items-center`}>
+                          <img src={replyIcon} className="dark:invert dark:brightness-0 dark:saturate-0" />
                         </div>
-                        <div className="text-sm text-gray-700 flex">
-                          <div>{reply.content}</div>
-                          <div className="text-xs text-gray-500 mt-0.5"><span className="w-1 h-1 inline-block mx-1 bg-[#0E253CD9] rounded-full"></span>{reply.time}</div>
+                        <div className="text-sm dark:[#FFFFFFCC] text-[#0E253CD9] flex">
+                          <div className=" dark:text-[#FFFFFFCC] text-[#0E253CD9]">{reply.content}</div>
+                          <div className="text-xs text-gray-500 dark:text-[#FFFFFFCC] mt-0.5"><span className="w-1 h-1 inline-block mx-1 bg-[#0E253CD9] rounded-full"></span>{reply.time}</div>
                         </div>
                       </div>
                     ))}

@@ -22,11 +22,11 @@ export default function Tabs() {
           <button
             key={tab.id}
             onClick={() => setActiveTab(tab.id)}
-            className={` text-center border border-[#0E253C1A] text-sm rounded-tl-2xl rounded-tr-2xl px-4 py-2
+            className={` text-center border border-[#0E253C1A] dark:border-[#FFFFFF21] text-sm rounded-tl-2xl rounded-tr-2xl px-4 py-2
               ${
                 activeTab === tab.id
-                  ? "border-b-0 text-[#513CCE] font-medium bg-white"
-                  : "text-[#0E253CD9] hover:text-[#513CCE] "
+                  ? "border-b-0 text-[#513CCE] dark:text-[#8378FF] font-medium bg-white dark:bg-[#001121]"
+                  : "text-[#0E253CD9] dark:text-[#FFFFFFCC] hover:text-[#513CCE] dark:bg-[#010D19]"
               }`}
           >
             {tab.label}
@@ -35,10 +35,9 @@ export default function Tabs() {
       </div>
 
       {/* Tab content */}
-      <div className="p-4 border border-[#0E253C1A] border-t-0 bg-white">
+      <div className="p-4 border border-[#0E253C1A] dark:border-[#FFFFFF21] border-t-0 bg-white dark:bg-[#001121]">
         {tabs.find((tab) => tab.id === activeTab)?.content}
       </div>
-    
     </div>
   );
 }
