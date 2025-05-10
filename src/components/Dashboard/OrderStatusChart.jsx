@@ -108,8 +108,8 @@ export default function OrderStatusChart() {
             })
           }
         </div>
+        <div className="w-5/12"><DonutChart /></div>
       </div>
-        <div className="w-full"><DonutChart /></div>
     </div>
   );
 }

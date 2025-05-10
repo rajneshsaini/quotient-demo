@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import CardStat from '../components/Dashboard/CardStat'
 import OrderStatusChart from "../components/Dashboard/OrderStatusChart";
 import RecentActivity from "../components/Dashboard/RecentActivity";
+import RecentOrders from "../components/Dashboard/RecentOrders";
+import RevenueChart from "../components/Dashboard/RevenueChart";
 
 
 export default function Dashboard() {
@@ -16,6 +18,8 @@ export default function Dashboard() {
           <RecentActivity />
         </div>
       </div>
+      <RecentOrders />
+      <RevenueChart />
     </>
   );
 }
