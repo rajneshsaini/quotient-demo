@@ -116,9 +116,8 @@ const RevenueChart = () => {
           <Tooltip />
           <Bar
             dataKey="value"
-            fill={theme === "dark" ? "#7c3aed" : "#8b5cf6"}
-            radius={[4, 4, 0, 0]}
-            barSize={50}
+            fill={theme === "dark" ? "#7c3aed" : "#513CCE"}
+            barSize={78}
           >
             <LabelList
               dataKey="value"

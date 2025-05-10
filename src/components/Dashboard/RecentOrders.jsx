@@ -1,5 +1,6 @@
 import React from 'react';
 import Card from '../common/Card';
+import { CircleArrowRight } from 'lucide-react';
 
 
 const orders = [
@@ -97,51 +98,55 @@ const orders = [
 
 const RecentOrders = () => {
   return (
-    <Card className="p-4">
-      <h2 className="text-lg font-medium mb-4 dark:text-white">Recent Orders</h2>
-      
-      <div className="overflow-x-auto">
+   <div className="bg-[#F6F8F9] dark:bg-[#010D19] border border-[#0E253C1A] dark:border-[#FFFFFF21] rounded-2xl mt-4">
+      <div className="flex justify-between items-center px-4 py-3">
+       <h2 className="text-lg font-semibold text-[#0E253C] dark:text-white">Recent Activities</h2>
+        <div>
+        </div>
+      </div>
+      <div className="overflow-x-auto border-t border-[#0E253C1A] dark:border-[#FFFFFF21]">
         <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
-          <thead>
+          <thead className='bg-white dark:bg-[#001121]'>
             <tr>
-              <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
+              <th className="px-4 py-3 text-left text-xs font-medium text-[#0E253CD9] dark:text-gray-400 uppercase tracking-wider">
                 Order ID
               </th>
-              <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
+              <th className="px-4 py-3 text-left text-xs font-medium text-[#0E253CD9] dark:text-gray-400 uppercase tracking-wider">
                 Products
               </th>
-              <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
+              <th className="px-4 py-3 text-left text-xs font-medium text-[#0E253CD9] dark:text-gray-400 uppercase tracking-wider">
                 Channel
               </th>
-              <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
+              <th className="px-4 py-3 text-left text-xs font-medium text-[#0E253CD9] dark:text-gray-400 uppercase tracking-wider">
                 Customer
               </th>
-              <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
+              <th className="px-4 py-3 text-left text-xs font-medium text-[#0E253CD9] dark:text-gray-400 uppercase tracking-wider">
                 Total
               </th>
-              <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
+              <th className="px-4 py-3 text-left text-xs font-medium text-[#0E253CD9] dark:text-gray-400 uppercase tracking-wider">
                 Delivery Date
               </th>
             </tr>
           </thead>
-          <tbody className="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
+          <tbody className="bg-[#F6F8F9] dark:bg-[#010D19] divide-y divide-gray-200 dark:divide-gray-700">
             {orders.map((order) => (
               <tr key={order.id} className="hover:bg-gray-50 dark:hover:bg-gray-700">
-                <td className="px-4 py-3 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white">
+                <td className="px-4 py-3 whitespace-nowrap text-sm  text-[#0E253C] dark:text-white">
                   {order.id}
                 </td>
                 <td className="px-4 py-3 whitespace-nowrap">
                   <div className="flex items-center">
+                      <div className="text-sm text-[#0E253C] dark:text-gray-400">
+                        x{order.quantity}
+                      </div>
                     <div className="flex-shrink-0 h-8 w-8 rounded bg-gray-100 dark:bg-gray-700 flex items-center justify-center">
                       <span className="text-lg">{order.product.image}</span>
                     </div>
                     <div className="ml-3">
-                      <div className="text-sm font-medium text-gray-900 dark:text-white">
+                      <div className="text-sm text-[#0E253C] dark:text-white">
                         {order.product.name}
                       </div>
-                      <div className="text-xs text-gray-500 dark:text-gray-400">
-                        x{order.quantity}
-                      </div>
+                    
                     </div>
                   </div>
                 </td>
@@ -156,15 +161,15 @@ const RecentOrders = () => {
                     <div className="flex-shrink-0 h-7 w-7 rounded-full bg-purple-100 dark:bg-purple-900 flex items-center justify-center text-purple-800 dark:text-purple-200">
                       {order.customer.avatar}
                     </div>
-                    <div className="ml-2 text-sm font-medium text-gray-900 dark:text-white">
+                    <div className="ml-2 text-sm text-[#0E253C] dark:text-white">
                       {order.customer.name}
                     </div>
                   </div>
                 </td>
-                <td className="px-4 py-3 whitespace-nowrap text-sm text-gray-900 dark:text-white">
+                <td className="px-4 py-3 whitespace-nowrap text-sm text-[#0E253C] dark:text-white">
                   {order.total}
                 </td>
-                <td className="px-4 py-3 whitespace-nowrap text-sm text-gray-900 dark:text-white">
+                <td className="px-4 py-3 whitespace-nowrap text-sm text-[#0E253C] dark:text-white">
                   {order.deliveryDate}
                 </td>
               </tr>
@@ -173,15 +178,13 @@ const RecentOrders = () => {
         </table>
       </div>
       
-      <div className="mt-4 flex justify-center">
-        <button className="flex items-center text-primary-600 dark:text-primary-400 text-sm font-medium">
+      <div className="flex justify-center gap-1">
+        <button className="h-[34px] flex items-center text-[#513CCE] dark:text-[#513CCE] text-xs">
           View 256 more orders 
-          <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
-          </svg>
+        <CircleArrowRight size={20} strokeWidth={1.5} className='text-[#513CCE]' />
         </button>
       </div>
-    </Card>
+    </div>
   );
 };
 
