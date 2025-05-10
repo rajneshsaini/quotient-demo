@@ -52,17 +52,17 @@ const RevenueChart = () => {
     .toFixed(2);
 
   return (
-    <div>
+    <div className="bg-[#F6F8F9] dark:bg-[#010D19] border border-[#0E253C1A] dark:border-[#FFFFFF21] rounded-2xl mt-4 p-3">
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-2 rounded-xl border border-[#0E253C1A] dark:border-[#FFFFFF21]">
           {tabs.map((tab) => (
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
               className={`px-4 py-2 text-sm font-medium rounded-md transition-colors ${
                 activeTab === tab.id
-                  ? "bg-primary-600 text-white"
-                  : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
+                  ? "bg-white text-[#1D2433] dark:text-white dark:bg-[#8378FF] rounded-xl"
+                  : "bg-transparent text-[#0E253CD9] dark:text-[#FFFFFFCC] hover:text-gray-900 dark:hover:text-white"
               }`}
             >
               {tab.label}

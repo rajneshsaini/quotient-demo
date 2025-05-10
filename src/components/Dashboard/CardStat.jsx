@@ -2,6 +2,10 @@ import Slider from "react-slick";
 import totalOrdersIcon from "../../assets/icons/totalOrders.svg";
 import arrowNextIcon from "../../assets/icons/arrowNextIcon.svg";
 import arrowPrevIcon from "../../assets/icons/arrowPrevIcon.svg";
+import pendingReturns from "../../assets/icons/pendingReturns.svg";
+import pendingOrders from "../../assets/icons/pendingOrders.svg";
+import totalRevenue from "../../assets/icons/totalRevenue.svg";
+import totalTaken from "../../assets/icons/totalTaken.svg";
 import profitIcon from "../../assets/icons/profit.svg";
 import lossIcon from "../../assets/icons/loss.svg";
 
@@ -15,33 +19,33 @@ const statData = [
     profitLossVal: 28,
   },
   {
-    id: "stat1",
-    icon: totalOrdersIcon,
-    title: "Total Revenue",
+    id: "stat2",
+    icon: totalTaken,
+    title: "Total Taken",
     statNum: 123,
     isProfit: false,
     profitLossVal: 28,
   },
   {
-    id: "stat1",
-    icon: totalOrdersIcon,
-    title: "Pending Orders",
+    id: "stat3",
+    icon: totalRevenue,
+    title: "Total Revenue",
     statNum: "$1234.99",
     isProfit: false,
     profitLossVal: 28,
   },
   {
-    id: "stat1",
-    icon: totalOrdersIcon,
-    title: "Pending Return",
+    id: "stat4",
+    icon: pendingOrders,
+    title: "Pending Orders",
     statNum: "$1234.99",
     isProfit: true,
     profitLossVal: 28,
   },
   {
-    id: "stat1",
-    icon: totalOrdersIcon,
-    title: "Total Orders",
+    id: "stat5",
+    icon: pendingReturns,
+    title:  "Pending Return",
     statNum: 123,
     isProfit: true,
     profitLossVal: 28,

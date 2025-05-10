@@ -1,6 +1,11 @@
 import { useEffect, useRef, useState } from "react";
 import downArrow from '../../assets/icons/downArrow.svg'
 import allOrders from '../../assets/icons/allOrders.svg'
+import celebrate from '../../assets/icons/celebrate.svg'
+import timer from '../../assets/icons/timer.svg'
+import disptach from '../../assets/icons/disptach.svg'
+import delivered from '../../assets/icons/delivered.svg'
+import cancel from '../../assets/icons/cancel.svg'
 import DonutChart from "./DonutChart";
 
 const categories = ['Technology', 'Health', 'Finance'];
@@ -12,31 +17,31 @@ const orderDetails = [{
 },
 {
   id: 'order2',
-  icon: allOrders,
+  icon: celebrate,
   title: 'New',
   count: 50,
 },
 {
   id: 'order3',
-  icon: allOrders,
+  icon: timer,
   title: 'Pending',
   count: 50,
 },
 {
   id: 'order4',
-  icon: allOrders,
+  icon: disptach,
   title: 'Dispatched',
   count: 50,
 },
 {
   id: 'order5',
-  icon: allOrders,
+  icon: delivered,
   title: 'Delivered',
   count: 123,
 },
 {
   id: 'order6',
-  icon: allOrders,
+  icon: cancel,
   title: 'Cancelled',
   count: 50,
 },]

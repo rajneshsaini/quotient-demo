@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import messageIconWhite from '../../assets/icons/messageIconWhite.svg'
 import replyIcon from '../../assets/icons/replyIcon.svg'
 
@@ -92,12 +92,35 @@ const activities = [
   }
 ];
 
+ 
+
 export default function RecentActivity() {
+    const [activeTab, setActiveTab] = useState("message");
+   const tabs = [
+    { id: "message", label: "Message" },
+    { id: "email", label: "Email" },
+   
+  ];
   return (
     <div className="bg-[#F6F8F9] border border-[#0E253C1A] rounded-2xl mt-4 dark:bg-[#010D19] dark:border-[#FFFFFF21]">
       <div className="flex justify-between items-center px-4 py-3">
        <h2 className="text-lg font-semibold text-[#0E253C] dark:text-white">Recent Activities</h2>
         <div>
+                  <div className="flex flex-wrap gap-2 rounded-xl border border-[#0E253C1A] dark:border-[#FFFFFF21]">
+          {tabs.map((tab) => (
+            <button
+              key={tab.id}
+              onClick={() => setActiveTab(tab.id)}
+              className={`px-4 py-2 text-sm font-medium rounded-md transition-colors ${
+                activeTab === tab.id
+                  ? "bg-white text-[#1D2433] dark:text-white dark:bg-[#8378FF] rounded-xl"
+                  : "bg-transparent text-[#0E253CD9] dark:text-[#FFFFFFCC] hover:text-gray-900 dark:hover:text-white"
+              }`}
+            >
+              {tab.label}
+            </button>
+          ))}
+        </div>
         </div>
       </div>
       <div className="border-t border-[#0E253C1A] dark:border-[#FFFFFF21] px-5">
