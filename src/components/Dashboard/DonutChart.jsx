@@ -41,7 +41,7 @@ const renderLabel = ({
 const DonutChart = () => {
   const { theme, toggleTheme } = useTheme();
   return (
-    <div className="w-full h-64 flex justify-center items-center">
+    <div className="w-full h-full flex justify-center items-center">
       <ResponsiveContainer width={250} height={250}>
         <PieChart>
           <Pie

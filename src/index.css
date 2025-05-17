@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.PhoneInputCountry {
+    display: none !important;
+}
+.dark .PhoneInputInput{
+    background-color: #001121 ;
+    color: #fff;
+   
+}
+
+.dark .PhoneInput{
+ border-color: #FFFFFF4D;
+}
