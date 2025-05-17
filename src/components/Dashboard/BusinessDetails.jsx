@@ -1,9 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import { Save, Plus, X } from "lucide-react";
 import Card from "../common/Card";
-import usFlag from '../../assets/images/flag.png'
+import 'react-phone-number-input/style.css'
+import PhoneNumberList from "./CountrySelector";
 
 const BusinessDetails = () => {
+  const [value, setValue] = useState("")
+  const [data, setData] = useState([])
+  console.log("data", data)
+  const handleAddCountries = () => {
+    setData((prev) => [...prev, value])
+  }
   return (
     <Card className="p-4 dark:bg-[#001121]">
       <div className="flex justify-between items-center mb-4">
@@ -44,30 +51,7 @@ const BusinessDetails = () => {
         <div className="bg-[#0E253C1A] border-t border-[#0E253C1A] h-[1px] w-full m-0 p-0"></div>
 
         <div>
-          <div className="flex justify-between mb-1">
-            <label className="block text-xs font-medium text-[#0E253C] dark:text-gray-400 mb-2">
-              Phone Number
-            </label>
-            <button className="text-xs text-[#513CCE]"><Plus size={20} strokeWidth={1.5} className="text-[#513CCE]" /></button>
-          </div>
-
-          {["+1 344 434 4445", "+1 344 434 4445"].map((phone, index) => (
-            <div key={index} className="flex mb-2 gap-1.5">
-              <div className="flex-shrink-0">
-                <select className="h-full p-2 text-sm bg-white dark:bg-[#001121] border border-gray-300 dark:border-[#FFFFFF4D] rounded-xl text-gray-900 dark:text-white w-[100px]">
-                  <option><img src={usFlag} />US</option>
-                </select>
-              </div>
-              <input
-                type="tel"
-                value={phone}
-                className=" text-sm p-2 border border-gray-300 dark:border-[#FFFFFF4D] rounded-lg dark:border-gray-700 bg-white dark:bg-[#001121] text-gray-900 dark:text-white w-[164px]"
-              />
-              <button className="px-3 w-[78px] bg-white dark:bg-gray-800 border  border-[#DC3545]  rounded-xl text-[#DC3545]">
-                Remove
-              </button>
-            </div>
-          ))}
+          <PhoneNumberList />
         </div>
         <div className="bg-[#0E253C1A] border-t border-[#0E253C1A] h-[1px] w-full m-0 p-0"></div>
 

@@ -68,11 +68,10 @@ export default function OrderStatusChart() {
           <div className="relative w-[146px] rounded-xl" ref={dropdownRef}>
             <button
               onClick={() => setOpen((prev) => !prev)}
-              className="rounded-xl w-full px-4 py-2 text-left text-sm font-semibold border border-gray-300 bg-white shadow-sm hover:border-blue-500 focus:outline-none flex justify-between items-center "
+              className="rounded-xl w-full px-4 py-2 text-left text-sm font-semibold border border-gray-300 bg-white shadow-sm dark:border-gray-700  dark:bg-gray-800 dark:text-white focus:outline-none flex justify-between items-center "
             >
               {selected || 'All Categories'}<img src={downArrow} alt="downArrow" />
             </button>
-
             {open && (
               <ul className="absolute z-10 w-full mt-1 bg-white border border-gray-300 rounded shadow-md">
                 {categories.map((cat) => (

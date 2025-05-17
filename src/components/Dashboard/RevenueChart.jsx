@@ -70,7 +70,7 @@ const RevenueChart = () => {
           ))}
         </div>
         <div className="flex gap-2 w-full sm:w-auto">
-          <select className="flex-1 sm:flex-none text-sm border border-gray-200 dark:border-gray-700 rounded-md bg-white dark:bg-gray-800 px-3 py-1.5">
+          <select className="flex-1 sm:flex-none text-sm border border-gray-200 dark:border-gray-700 rounded-md bg-white dark:bg-gray-800 dark:text-white px-3 py-1.5">
             <option>All Categories</option>
           </select>
           <select className="flex-1 sm:flex-none text-sm border border-gray-200 dark:border-gray-700 rounded-md bg-white dark:bg-gray-800 px-3 py-1.5">
